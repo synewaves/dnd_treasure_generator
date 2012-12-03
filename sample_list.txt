@@ -1,0 +1,8 @@
++1 Lifestealer Shortsword, 4, Uncommon, 840
++1 Seeker Dagger, 3, Uncommon, 680
++1 Gloaming Armor, 5, Rare, 1000
++1 Weapon of Speed, 5, Rare, 1000
+Helm of Seven Deaths, 5, Rare, 1000
++1 Safewing Amulet, 3, Common, 680
+Restful Bedroll, 1, Common, 360
+Bag of Holding, 5, Uncommon, 1000

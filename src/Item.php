@@ -1,4 +1,12 @@
 <?php
+/*
+ * This file is part of the dnd_treasure_generator library.
+ *
+ * (c) Matthew Vince <matthew.vince@phaseshiftllc.com>
+ *
+ * This source file is subject to the MIT license that is bundled
+ * with this source code in the file LICENSE.
+ */
 
 class Item
 {
@@ -11,8 +19,16 @@ class Item
   public $sell_value;
   public $level;
   public $rarity;
+  public $display_value;
 
-  //
+  /**
+   * Constructor
+   *
+   * @param string $name item name
+   * @param int $gold_value item actual value (not sell value)
+   * @param int $level item level
+   * @param int $rarity item rarity
+   */
   public function __construct($name = null, $gold_value = null, $level = null, $rarity = null)
   {
     $this->name = $name;
@@ -20,9 +36,14 @@ class Item
     $this->level = $level;
     $this->rarity = $rarity;
     $this->sell_value = $this->getSellValue();
+    $this->display_value = (string) $this;
   }
 
-  //
+  /**
+   * Get the sell value for the item
+   *
+   * @return int sell value
+   */
   public function getSellValue()
   {
     switch ($this->rarity) {
@@ -32,7 +53,11 @@ class Item
     }
   }
 
-  //
+  /**
+   * Get string representation of item
+   *
+   * @return string item as string
+   */
   public function __toString()
   {
     switch ($this->rarity) {
