@@ -67,9 +67,6 @@ if (isset($_POST["items"]) && isset($_POST["options"])) {
   <h1>Treasure Generator</h1>
   <div class="row">
     <div class="span12">
-      <div id="selected" class="continue-controls"></div>
-      <div id="debug" class="continue-controls"></div>
-
       <form method="POST" action="index.php">
         <fieldset class="form-inline">
           <legend>Items</legend>
@@ -117,6 +114,10 @@ if (isset($_POST["items"]) && isset($_POST["options"])) {
           <button class="btn btn-primary" id="generate"><i class="icon-ok-circle icon-white"></i> Generate</button>
         </div>
       </form>
+    </div>
+    <div class="span12">
+      <div id="selected" class="continue-controls"></div>
+      <div id="debug" class="continue-controls"></div>
     </div>
   </div>
 </div>
