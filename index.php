@@ -88,6 +88,7 @@ if (isset($_POST["items"]) && isset($_POST["options"])) {
             <select name="options[modifier]" id="options_modifier">
               <option value="<?php echo Generator::CALC_MOD_LEVEL; ?>">Level + Rarity</option>
               <option value="<?php echo Generator::CALC_MOD_MONEY; ?>">Sell Value</option>
+              <option value="<?php echo Generator::CALC_MOD_EVEN; ?>">Even Stevens</option>
             </select>
 
             <label for="options_modifier_level">Party Level Modifier:</label>

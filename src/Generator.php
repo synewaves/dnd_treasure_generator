@@ -12,6 +12,7 @@ class Generator
 {
   const CALC_MOD_LEVEL = 0;
   const CALC_MOD_MONEY = 1;
+  const CALC_MOD_EVEN = 2;
 
   public $min_sell_value = 0;
   public $max_sell_value = PHP_INT_MAX;
@@ -104,8 +105,10 @@ class Generator
 
     if ($this->modifier == self::CALC_MOD_LEVEL) {
       $this->odds_table = $this->generateOddsForLevelMods($items, $this->modifier_level);
-    } else {
+    } elseif ($this->modifier == self::CALC_MOD_MONEY) {
       $this->odds_table = $this->generateOddsForMoneyMods($items);
+    } else {
+      $this->odds_table = $this->generateOddsForEvenMods($items);
     }
 
     // adjust odds map to create relative percentages:
@@ -184,6 +187,24 @@ class Generator
       $odds[$key] = round($total_sell_value / $item->sell_value);
     }
     
+    return $odds;
+  }
+
+  /**
+   * Generate odds table with all items at equal chance
+   *
+   * @param array $items list of Item to generate from
+   * @return array odds table
+   */
+  protected function generateOddsForEvenMods($items)
+  {
+    $odds = array();
+    $percent = 1 / count($items);
+
+    foreach ($items as $key => $item) {
+      $odds[$key] = $percent;
+    }
+
     return $odds;
   }
 
