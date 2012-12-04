@@ -118,6 +118,7 @@ if (isset($_POST["items"]) && isset($_POST["options"])) {
     <div class="span12">
       <div id="selected" class="continue-controls"></div>
       <div id="debug" class="continue-controls"></div>
+      <p>You can view and fork the code for this project at <a href="https://github.com/synewaves/dnd_treasure_generator">Github</a>.</p>
     </div>
   </div>
 </div>
